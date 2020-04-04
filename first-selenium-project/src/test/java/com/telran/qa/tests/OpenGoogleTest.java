@@ -19,18 +19,31 @@ public class OpenGoogleTest {
 @Test
 public void testOpenGoogle(){
 
-wd.findElement(By.className("gb_D")).click();
-    wd.findElement(By.className("gb_D")).click();
+    click(By.className("gb_D"));
+    click(By.className("gb_D"));
 }
+
+    private void click(By locator) {
+        wd.findElement(locator).click();
+    }
+
     @Test
     public void testSearchGoogle() throws InterruptedException {
 
-        wd.findElement(By.name("q")).click();
-wd.findElement(By.name("q")).clear();
+        click(By.name("q"));
+        wd.findElement(By.name("q")).clear();
 wd.findElement(By.name("q")).sendKeys("Java");
 
 Thread.sleep(3000);
 }
+    @Test
+    public void testOpenProfile() throws InterruptedException {
+
+        click(By.id("gsr"));
+
+
+        Thread.sleep(3000);
+    }
 @AfterClass
 public void tearDown(){
 wd.quit();
