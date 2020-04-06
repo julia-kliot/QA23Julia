@@ -26,7 +26,7 @@ public class LoginToJira {
 
     @Test
     public void testJiraLogin() {
-wd.findElement(By.name("os_username")).click();
+        wd.findElement(By.name("os_username")).click();
 wd.findElement(By.name("os_username")).clear();
 wd.findElement(By.name("os_username")).sendKeys("juliakliot.jk");
 
