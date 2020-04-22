@@ -89,4 +89,3 @@ public class BoardCreationTests {
         wd.quit();
     }
 }
-
