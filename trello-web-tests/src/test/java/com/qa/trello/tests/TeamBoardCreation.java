@@ -32,7 +32,14 @@ public class TeamBoardCreation {
         fillForm();
         confirmTeamCreation();
         returnToHomePage();
+
+
+
+
+
     }
+
+
 
     private void returnToHomePage() {
         click(By.cssSelector("[color='light']"));
@@ -46,10 +53,9 @@ public class TeamBoardCreation {
 
     private void fillForm() throws InterruptedException {
         type(By.cssSelector("[data-test-id='header-create-team-name-input'"),"Test_Team1");
-        Thread.sleep(3000);
-        click(By.xpath("//*[@class='css-dmzcl _1T1MG_BX1zeaq8']"));
-        click(By.id("teamTypeSelect"));
-        click(By.cssSelector("[class='_38pq5NbRWAG39y']"));
+        click(By.cssSelector("[id='teamTypeSelect']"));
+        Thread.sleep(2000);
+        click(By.cssSelector("[data-test-id^=header-create-team-type] li"));
     }
 
     private void initTeamCreation() {
@@ -67,7 +73,6 @@ public class TeamBoardCreation {
         click(By.cssSelector("#login.button-green"));
         Thread.sleep(3000);
         type(By.cssSelector("input#password"), password);
-
 
     }
 
@@ -92,3 +97,4 @@ public class TeamBoardCreation {
         wd.quit();
     }
 }
+
