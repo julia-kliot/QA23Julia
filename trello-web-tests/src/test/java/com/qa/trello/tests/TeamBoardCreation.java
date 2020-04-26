@@ -6,7 +6,7 @@ public class TeamBoardCreation extends TestBase {
 
     @Test
     public void TeamBoardCreation() throws InterruptedException {
-      
+
         initTeamCreation();
         fillForm();
         confirmTeamCreation();

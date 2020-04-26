@@ -26,6 +26,8 @@ public class TestBase {
 
     public void returnToHomePage() {
         click(By.cssSelector("[class='_2BQG4yPMt5s_hu _2hgn5meZL7bJdx _1ctYJ9-gOV_hrm _3Xj1tqB73NcWn3']"));
+        click(By.cssSelector("[class='_2BQG4yPMt5s_hu _2hgn5meZL7bJdx _1ctYJ9-gOV_hrm _3Xj1tqB73NcWn3']"));
+
     }
 
     public void confirmTeamCreation()  {
@@ -105,4 +107,34 @@ public class TestBase {
     public void tearDown() {
         wd.quit();
     }
+
+    public void permanentlyDeleteBoard() {
+        click(By.cssSelector(".js-delete"));
+        confirm();
+
+    }
+
+    public void initBoardDeletionInMoreMenu() throws InterruptedException {
+        clickCloseBoardFromMoreMenu();
+        confirm();
+    }
+
+    public void confirm() {
+        click(By.cssSelector(".js-confirm"));
+    }
+
+    public void clickCloseBoardFromMoreMenu() throws InterruptedException {
+        Thread.sleep(3000);
+        click(By.cssSelector(".js-close-board"));
+    }
+
+    public void clickMoreButton()  {
+
+
+                click(By.cssSelector(".js-open-more"));
+         }
+
+    public void openFirstPersonalBoard() throws InterruptedException {
+        Thread.sleep(2000);
+             click(By.xpath("//*[@class='icon-lg icon-member']/../../..// li")); }
 }
