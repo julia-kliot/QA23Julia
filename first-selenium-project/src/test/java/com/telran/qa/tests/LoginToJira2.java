@@ -26,6 +26,7 @@ public class LoginToJira2 {
     }
 
     @Test
+
     public void testJiraLogin() {
         type(By.name("os_username"), "juliakliot.jk");
 

@@ -94,9 +94,10 @@ public class TestBase {
     }
 
     public void fillBoardForm() {
-        type(By.cssSelector("input._23NUW98LaZfBpQ"), "newBoard2");
-        click(By.cssSelector("._1vk4y48RR5OmqE"));
-        click(By.cssSelector("._1uK2vQ_aMRS2NU"));
+        type(By.cssSelector("[data-test-id='create-board-title-input']"), "newBoard_3");
+        click(By.cssSelector("button.W6rMLOx8U0MrPx"));
+        click(By.xpath("//li[1]/button[@class='_2jR0BZMM5cBReR']"));
+
     }
 
     public void initBoardCreation() {
@@ -137,4 +138,26 @@ public class TestBase {
     public void openFirstPersonalBoard() throws InterruptedException {
         Thread.sleep(2000);
              click(By.xpath("//*[@class='icon-lg icon-member']/../../..// li")); }
+
+    public int getBoardsCount() throws InterruptedException {
+
+        Thread.sleep(2000);
+        return wd.findElements(By.xpath("//*[@class='icon-lg icon-member']/../../..// li")).size()-1;
+    }
+     public void createBoard() {
+
+        initBoardCreation();
+        fillBoardForm();
+        confirmBoardCreation();
+        returnToHomePage();
+    }
+    public int getTeamCount() {
+        return wd.findElements(By.cssSelector("[data-test-id=home-team-tab-name]")).size();
+    }
+    public void createTeam() throws InterruptedException {
+        initTeamCreation();
+        fillForm();
+        confirmTeamCreation();
+    }
 }
+
