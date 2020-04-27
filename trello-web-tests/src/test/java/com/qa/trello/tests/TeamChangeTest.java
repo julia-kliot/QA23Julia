@@ -12,13 +12,8 @@ public class TeamChangeTest extends TestBase {
             createTeam();
         }
     }
-
-
-
-
-
     @Test
-    public void changeTeamTests() {
+    public void changeTeamTests() throws InterruptedException {
 
         openFirstTeam();
         clickTeamSetting();
@@ -35,10 +30,12 @@ public class TeamChangeTest extends TestBase {
     }
 
     public void changeTeamProfile() {
+
         click(By.cssSelector("[name=edit]"));
     }
 
-    public void changeTeamName() {
+    public void changeTeamName() throws InterruptedException {
+        Thread.sleep(2000);
         type(By.cssSelector("#displayName"), "New Trello Company");
         wd.findElement(By.cssSelector("#displayName")).sendKeys(Keys.ENTER);
     }
