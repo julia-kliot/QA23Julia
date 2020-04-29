@@ -9,6 +9,7 @@ public class BoardDeletionTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() throws InterruptedException {
+
         if (getBoardsCount() == 0) {
             createBoard();
         }
@@ -18,18 +19,16 @@ public class BoardDeletionTests extends TestBase {
     @Test
     public void TestBoardDeletion() throws InterruptedException {
 
-        Thread.sleep(5000);
-        int before = getBoardsCount();
-
         Thread.sleep(2000);
+        int before = getBoardsCount();
         openFirstPersonalBoard();
         clickMoreButton();
         initBoardDeletionInMoreMenu();
         permanentlyDeleteBoard();
         returnToHomePage();
-        int after = getBoardsCount();
+      int after = getBoardsCount();
 
-        System.out.println("was:  " + before + "now:  " + after);
+        System.out.println("was:  " + before+  "now:  " + after);
         Assert.assertEquals(after, before - 1);
 
 

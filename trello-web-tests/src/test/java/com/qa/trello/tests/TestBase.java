@@ -152,7 +152,7 @@ public class TestBase {
         returnToHomePage();
     }
     public int getTeamCount() {
-        return wd.findElements(By.cssSelector("[data-test-id=home-team-tab-name]")).size();
+        return wd.findElements(By.cssSelector("[data-test-id=home-team-tab-name]")).size()-1;
     }
     public void createTeam() throws InterruptedException {
         initTeamCreation();
