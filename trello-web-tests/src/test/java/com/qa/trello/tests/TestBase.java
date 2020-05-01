@@ -151,13 +151,16 @@ public class TestBase {
         confirmBoardCreation();
         returnToHomePage();
     }
-    public int getTeamCount() {
-        return wd.findElements(By.cssSelector("[data-test-id=home-team-tab-name]")).size()-1;
+    public int getTeamCount() throws InterruptedException {
+        Thread.sleep(7000);
+        return wd.findElements(By.cssSelector("[data-test-id=home-team-tab-name]")).size();
     }
     public void createTeam() throws InterruptedException {
+
         initTeamCreation();
         fillForm();
         confirmTeamCreation();
+        returnToHomePage();
     }
 }
 

@@ -22,8 +22,9 @@ public class TeamChangeTest extends TestBase {
         returnToHomePage();
     }
 
-    private void openFirstTeam() {
+    private void openFirstTeam() {click(By.cssSelector("[data-test-id=home-team-tab-name]"));
     }
+
 
     public void clickTeamSetting() {
         click(By.cssSelector(".icon-gear.icon-sm"));
