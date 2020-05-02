@@ -34,20 +34,6 @@ public class TeamDeletionTests extends TestBase {
     }
 
 
-    public void openFirstTeam() {
-        click(By.cssSelector("[data-test-id=home-team-tab-name]"));
-    }
-
-    public void clickTeamSetting() {
-        click(By.cssSelector(".icon-gear.icon-sm"));
-       // click(By.cssSelector(".js-org-account "));
-    }
-
-    public void teamDeletion() {
-        click(By.cssSelector(".quiet-button"));
-        confirm();
-    }
-
 }
 
 

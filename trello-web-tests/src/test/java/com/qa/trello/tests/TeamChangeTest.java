@@ -22,23 +22,8 @@ public class TeamChangeTest extends TestBase {
         returnToHomePage();
     }
 
-    private void openFirstTeam() {click(By.cssSelector("[data-test-id=home-team-tab-name]"));
-    }
 
 
-    public void clickTeamSetting() {
-        click(By.cssSelector(".icon-gear.icon-sm"));
-    }
 
-    public void changeTeamProfile() {
-
-        click(By.cssSelector("[name=edit]"));
-    }
-
-    public void changeTeamName() throws InterruptedException {
-        Thread.sleep(2000);
-        type(By.cssSelector("#displayName"), "New Trello Company");
-        wd.findElement(By.cssSelector("#displayName")).sendKeys(Keys.ENTER);
-    }
 
 }

@@ -1,5 +1,6 @@
 package com.qa.trello.tests;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,6 +13,7 @@ public class TeamBoardCreation extends TestBase {
         initTeamCreation();
         fillForm();
         confirmTeamCreation();
+        inviteTeamLater();
         returnToHomePage();
         int after = getTeamCount();
         Assert.assertEquals(after, before + 1);
@@ -21,6 +23,7 @@ public class TeamBoardCreation extends TestBase {
 
 
     }
+
 
 
 }

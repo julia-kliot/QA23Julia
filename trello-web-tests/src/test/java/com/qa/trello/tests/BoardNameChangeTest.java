@@ -9,7 +9,11 @@ public class BoardNameChangeTest extends TestBase {
 
                 @BeforeMethod
         public void ensurePreconditions() throws InterruptedException {
-            if (getBoardsCount() == 0) {
+                    if (!isOnBoardsPage()) {
+                        click(By.cssSelector("[href$=boards]"));
+
+                    }
+                    if (getBoardsCount() == 0) {
                 createBoard();
             }
         }
