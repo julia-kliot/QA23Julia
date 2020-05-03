@@ -1,7 +1,5 @@
 package com.qa.trello.tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -11,22 +9,22 @@ public class TeamDeletionTests extends TestBase {
     @BeforeMethod
     public void ensurePreconditions() throws InterruptedException {
 
-        if (getTeamCount() == 0) {
+        if (app.getTeamCount() == 0) {
 
-            createTeam();
+            app.createTeam();
        }
 }
 
     @Test
     public void TeamDeletionTests() throws InterruptedException {
         Thread.sleep(5000);
-        int before = getTeamCount();
-        openFirstTeam();
+        int before = app.getTeamCount();
+        app.openFirstTeam();
         Thread.sleep(2000);
-        clickTeamSetting();
-        teamDeletion();
-        returnToHomePage();
-        int after = getTeamCount();
+        app.clickTeamSetting();
+        app.teamDeletion();
+        app.returnToHomePage();
+        int after = app.getTeamCount();
 
 
         System.out.println("was:  " + before + "now:  " + after);

@@ -9,28 +9,28 @@ public class BoardNameChangeTest extends TestBase {
 
                 @BeforeMethod
         public void ensurePreconditions() throws InterruptedException {
-                    if (!isOnBoardsPage()) {
-                        click(By.cssSelector("[href$=boards]"));
+                    if (!app.isOnBoardsPage()) {
+                        app.click(By.cssSelector("[href$=boards]"));
 
                     }
-                    if (getBoardsCount() == 0) {
-                createBoard();
+                    if (app.getBoardsCount() == 0) {
+                app.createBoard();
             }
         }
 
         @Test
         public void changeBoardName() throws InterruptedException {
-            openFirstPersonalBoard();
+            app.openFirstPersonalBoard();
             Thread.sleep(2000);
             changeName();
             Thread.sleep(2000);
-            returnToHomePage();
+            app.returnToHomePage();
         }
 
         public void changeName() throws InterruptedException {
-            click(By.cssSelector(".js-rename-board"));
+            app.click(By.cssSelector(".js-rename-board"));
             Thread.sleep(2000);
-            wd.findElement(By.cssSelector("input.js-board-name-input")).sendKeys("My new board" + Keys.ENTER);
+            app.wd.findElement(By.cssSelector("input.js-board-name-input")).sendKeys("My new board" + Keys.ENTER);
         }
 
 

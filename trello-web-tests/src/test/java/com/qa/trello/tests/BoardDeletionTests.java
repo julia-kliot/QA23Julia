@@ -9,12 +9,12 @@ public class BoardDeletionTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() throws InterruptedException {
-        if (!isOnBoardsPage()) {
-            click(By.cssSelector("[href$=boards]"));
+        if (!app.isOnBoardsPage()) {
+            app.click(By.cssSelector("[href$=boards]"));
 
         }
-        if (getBoardsCount() == 0) {
-            createBoard();
+        if (app.getBoardsCount() == 0) {
+            app.createBoard();
         }
     }
 
@@ -23,13 +23,13 @@ public class BoardDeletionTests extends TestBase {
     public void TestBoardDeletion() throws InterruptedException {
 
         Thread.sleep(2000);
-        int before = getBoardsCount();
-        openFirstPersonalBoard();
-        clickMoreButton();
-        initBoardDeletionInMoreMenu();
-        permanentlyDeleteBoard();
-        returnToHomePage();
-        int after = getBoardsCount();
+        int before = app.getBoardsCount();
+        app.openFirstPersonalBoard();
+        app.clickMoreButton();
+        app.initBoardDeletionInMoreMenu();
+        app.permanentlyDeleteBoard();
+        app.returnToHomePage();
+        int after = app.getBoardsCount();
 
         System.out.println("was:  " + before + "now:  " + after);
         Assert.assertEquals(after, before - 1);
