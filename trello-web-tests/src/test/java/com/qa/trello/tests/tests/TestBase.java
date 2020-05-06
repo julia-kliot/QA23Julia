@@ -1,7 +1,7 @@
-package com.qa.trello.tests;
+package com.qa.trello.tests.tests;
 
+import com.qa.trello.tests.framework.ApplicationManager;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
 public class TestBase {
@@ -18,6 +18,10 @@ public class TestBase {
     public void tearDown() {
 
         app.stop();
+    }
+
+    public void changeName() throws InterruptedException {
+
     }
 
 
