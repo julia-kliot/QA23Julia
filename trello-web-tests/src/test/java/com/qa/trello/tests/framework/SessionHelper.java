@@ -2,7 +2,6 @@ package com.qa.trello.tests.framework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class SessionHelper extends HelperBase {
     public SessionHelper(WebDriver wd) {
@@ -11,12 +10,12 @@ public class SessionHelper extends HelperBase {
 
     public void ConfirmLogin() {
          //wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login-submit"))).click();
-        click(By.id("login-submit"));
+        waitForElementLocatedAndClick(By.id("login-submit"), 20);
     }
 
     public void fillLoginFormAtlassianAcc(String userEmail, String password) throws InterruptedException {
         type(By.name("user"), userEmail);
-        click(By.cssSelector("#login.button-green"));
+        waitForElementLocatedAndClick(By.cssSelector("#login.button-green"), 20);
         Thread.sleep(3000);
         type(By.cssSelector("input#password"), password);
 
@@ -24,7 +23,7 @@ public class SessionHelper extends HelperBase {
 
     public void initLogin() {
 
-        click(By.cssSelector("[href='/login']"));
+        waitForElementLocatedAndClick(By.cssSelector("[href='/login']"), 20);
     }
 
     public void login(String email, String password) throws InterruptedException {

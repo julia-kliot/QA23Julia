@@ -12,7 +12,8 @@ public class BoardDeletionTests extends TestBase {
        // if (!app.getBoard().isOnBoardsPage()) {
          //   app.getBoard().click(By.cssSelector("[href$=boards]"));
 
-       // }
+       //
+        // }
         if (app.getBoard().getBoardsCount() == 0) {
             app.getBoard().createBoard();
         }

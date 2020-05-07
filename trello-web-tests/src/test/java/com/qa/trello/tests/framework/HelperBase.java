@@ -16,24 +16,35 @@ public class HelperBase {
     }
 
     public void returnToHomePage() {
-        click(By.cssSelector("[name='house']"));
+        waitForElementClickableAndClick(By.cssSelector("[name='house']"),20);
 
         //click(By.cssSelector("[class='_2BQG4yPMt5s_hu _2hgn5meZL7bJdx _1ctYJ9-gOV_hrm _3Xj1tqB73NcWn3']"), 20);
        // click(By.cssSelector("[class='_2BQG4yPMt5s_hu _2hgn5meZL7bJdx _1ctYJ9-gOV_hrm _3Xj1tqB73NcWn3']"), 20);
 
     }
 
+   public void waitForElementClickableAndClick(By locator, int timeOut)
+   { wait=new WebDriverWait(wd, timeOut);
+        // wd.findElement(locator).click();
+        wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+    }
+
+
     public void type(By locator, String text) {
-        click(locator);
+        waitForElementLocatedAndClick(locator, 20);
         wd.findElement(locator).clear();
         wd.findElement(locator).sendKeys(text);
     }
 
-    public void click(By locator) {
-        //wait=new WebDriverWait(wd, timeOutInSeconds);
-        wd.findElement(locator).click();
-        //wait.until(ExpectedConditions.presenceOfElementLocated(locator)).click();
+
+    public void waitForElementLocatedAndClick(By locator, int timeOut) {
+        wait=new WebDriverWait(wd, timeOut);
+        // wd.findElement(locator).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator)).click();
     }
+
+
+
 
     public  boolean isElementPresent(By locator){
         return wd.findElements(locator).size()>0;
@@ -41,6 +52,7 @@ public class HelperBase {
 
     public void confirm() {
 
-        click(By.cssSelector(".js-confirm"));
+
+        }
     }
-}
+

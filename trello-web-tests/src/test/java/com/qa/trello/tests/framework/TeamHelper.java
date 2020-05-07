@@ -11,26 +11,26 @@ public class TeamHelper extends HelperBase {
     }
 
     public void confirmTeamCreation()  {
-        click(By.cssSelector("[type='submit']"));
-        click(By.cssSelector(".eg0KI5SqghoOFd"));
+        waitForElementLocatedAndClick(By.cssSelector("[type='submit']"), 20);
+        waitForElementLocatedAndClick(By.cssSelector(".eg0KI5SqghoOFd"), 20);
 
     }
 
     public void fillForm() throws InterruptedException {
         type(By.cssSelector("[data-test-id='header-create-team-name-input']"),"Test_Team1");
-        click(By.cssSelector("[id='teamTypeSelect']"));
+        waitForElementLocatedAndClick(By.cssSelector("[id='teamTypeSelect']"), 20);
         Thread.sleep(2000);
-        click(By.cssSelector("[data-test-id^=header-create-team-type] li"));
+        waitForElementLocatedAndClick(By.cssSelector("[data-test-id^=header-create-team-type] li"), 20);
     }
 
     public void initTeamCreation() {
-        click(By.cssSelector("[class='icon-add icon-sm _2aV_KY1gTq1qWc']"));
+        waitForElementLocatedAndClick(By.cssSelector("[class='icon-add icon-sm _2aV_KY1gTq1qWc']"), 20);
        // click(By.xpath("//*[@class='_33CvMKqfH4Yf0j']"));
     }
 
     public void inviteTeamLater() {
         if (isElementPresent(By.cssSelector("[data-test-id=show-later-button]"))) {
-            click(By.cssSelector("[data-test-id=show-later-button]"));
+            waitForElementLocatedAndClick(By.cssSelector("[data-test-id=show-later-button]"), 20);
         }
     }
 
@@ -48,20 +48,21 @@ public class TeamHelper extends HelperBase {
     }
 
     public void teamDeletion() {
-        click(By.cssSelector(".quiet-button"));
+        waitForElementLocatedAndClick(By.cssSelector(".quiet-button"), 20);
         confirm();
     }
 
-    public void openFirstTeam() {click(By.cssSelector("[data-test-id=home-team-tab-name]"));
+    public void openFirstTeam() {
+        waitForElementLocatedAndClick(By.cssSelector("[data-test-id=home-team-tab-name]"), 20);
     }
 
     public void clickTeamSetting() {
-        click(By.cssSelector(".icon-gear.icon-sm"));
+        waitForElementLocatedAndClick(By.cssSelector(".icon-gear.icon-sm"), 20);
     }
 
     public void changeTeamProfile() {
 
-        click(By.cssSelector("[name=edit]"));
+        waitForElementLocatedAndClick(By.cssSelector("[name=edit]"), 20);
     }
 
     public void changeTeamName() throws InterruptedException {
