@@ -48,7 +48,7 @@ public class BoardHelper extends HelperBase {
     public void clickMoreButton()  {
 
 
-                waitForElementLocatedAndClick(By.cssSelector(".js-open-more"), 20);
+                waitForElementLocatedAndClick(By.cssSelector(".js-open-more"), 50);
          }
 
     public void openFirstPersonalBoard() throws InterruptedException {
@@ -69,10 +69,14 @@ public class BoardHelper extends HelperBase {
         returnToHomePage();
     }
 
-    public boolean isOnBoardsPage() {
-        String url = wd.getCurrentUrl();
-        return url.contains("boards");
+    public boolean isOnBoardsPage() throws InterruptedException {
+        Thread.sleep(3000);
+       String url = wd.getCurrentUrl();
+      return url.contains("boards");
     }
+
+
+
     public void changeName() throws InterruptedException {
         waitForElementLocatedAndClick(By.cssSelector(".js-rename-board"), 20);
         Thread.sleep(2000);
@@ -80,5 +84,9 @@ public class BoardHelper extends HelperBase {
     }
     public void openBoardPage() {
         waitForElementLocatedAndClick(By.cssSelector("[href$=boards]"), 20);
+    }
+
+    public void goToBoardsPageURL(String username){
+        wd. navigate().to("https://trello.com/"+username+"/boards");
     }
 }
