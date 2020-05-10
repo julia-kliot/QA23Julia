@@ -30,6 +30,7 @@ public class BoardDeletionTests extends TestBase {
         Thread.sleep(5000);
         app.getBoard().clickMoreButton();
         app.getBoard().initBoardDeletionInMoreMenu();
+        Thread.sleep(3000);
         app.getBoard().permanentlyDeleteBoard();
         app.getBoard().returnToHomePage();
         int after = app.getBoard().getBoardsCount();

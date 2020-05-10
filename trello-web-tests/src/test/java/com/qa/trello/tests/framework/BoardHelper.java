@@ -3,6 +3,9 @@ package com.qa.trello.tests.framework;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BoardHelper extends HelperBase {
 
@@ -30,7 +33,7 @@ public class BoardHelper extends HelperBase {
     }
 
     public void permanentlyDeleteBoard() {
-        waitForElementLocatedAndClick(By.cssSelector(".js-delete"), 20);
+        waitForElementLocatedAndClick(By.cssSelector(".js-delete"), 30);
         confirm();
 
     }
@@ -46,10 +49,16 @@ public class BoardHelper extends HelperBase {
     }
 
     public void clickMoreButton()  {
+        WebElement moreButton = new WebDriverWait(wd, 30).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".js-open-more")));
+        if(!moreButton.isDisplayed()) {
+            wd.findElement(By.cssSelector(".board-header-btn.mod-show-menu.js-show-sidebar")).click();
+        }
+        wd.findElement(By.cssSelector(".js-open-more")).click();
 
+    }
 
-                waitForElementLocatedAndClick(By.cssSelector(".js-open-more"), 50);
-         }
+                //waitForElementLocatedAndClick(By.cssSelector(".js-open-more"), 50);
+
 
     public void openFirstPersonalBoard() throws InterruptedException {
         Thread.sleep(2000);

@@ -8,12 +8,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
-public class ApplicationManager    {
+public class ApplicationManager {
     WebDriver wd;
     BoardHelper board;
     TeamHelper team;
     SessionHelper session;
-     String browser;
+    String browser;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -23,22 +23,24 @@ public class ApplicationManager    {
     public void init() throws InterruptedException {
 
 
-        if(browser.equals(BrowserType.CHROME)){
+        if (browser.equals(BrowserType.CHROME)) {
 
             wd = new ChromeDriver();
-        } if(browser.equals(BrowserType.FIREFOX)){
-            wd= new FirefoxDriver();
+        }
+        if (browser.equals(BrowserType.FIREFOX)) {
+            wd = new FirefoxDriver();
         }
 
         wd.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-       //wait = new WebDriverWait(wd, 20);
+        //wait = new WebDriverWait(wd, 20);
         wd.manage().window().maximize();
         wd.navigate().to("https://trello.com/");
         session = new SessionHelper(wd);
         session.login("juliakliot.jk@gmail.com", "misha2406");
+        Thread.sleep(3000);
 
-        board= new BoardHelper(wd);
-        team= new TeamHelper(wd);
+        board = new BoardHelper(wd);
+        team = new TeamHelper(wd);
     }
 
     public void stop() {

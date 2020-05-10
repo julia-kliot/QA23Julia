@@ -16,7 +16,7 @@ public class HelperBase {
     }
 
     public void returnToHomePage() {
-        waitForElementClickableAndClick(By.cssSelector("[name='house']"),20);
+        waitForElementClickableAndClick(By.xpath("//*[@name='house']/.."),20);
 
         //click(By.cssSelector("[class='_2BQG4yPMt5s_hu _2hgn5meZL7bJdx _1ctYJ9-gOV_hrm _3Xj1tqB73NcWn3']"), 20);
        // click(By.cssSelector("[class='_2BQG4yPMt5s_hu _2hgn5meZL7bJdx _1ctYJ9-gOV_hrm _3Xj1tqB73NcWn3']"), 20);

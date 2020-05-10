@@ -21,9 +21,9 @@ public class TestBase {
         app.stop();
     }
 
-    public void changeName() throws InterruptedException {
+   // public void changeName() throws InterruptedException {
 
-    }
+
 
 
 }

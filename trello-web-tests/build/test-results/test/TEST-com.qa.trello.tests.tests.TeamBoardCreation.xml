@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.qa.trello.tests.tests.TeamBoardCreation" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-09T19:48:59" hostname="dns" time="41.227">
-  <properties/>
-  <testcase name="TeamBoardCreation" classname="com.qa.trello.tests.tests.TeamBoardCreation" time="41.227"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
