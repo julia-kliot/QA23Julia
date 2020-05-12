@@ -1,7 +1,7 @@
 package com.qa.trello.tests.tests;
 
+import com.qa.trello.model.Board;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -20,7 +20,10 @@ public class BoardCreationTests extends TestBase {
         Thread.sleep(7000);
       //int before = app.getBoard().getBoardsCount();
         app.getBoard().initBoardCreation();
-        app. getBoard().fillBoardForm();
+        app. getBoard().fillBoardForm(
+                new Board()
+                .withName("newBoard_3"+System.currentTimeMillis())
+                .withColor("green"));
         app. getBoard().confirmBoardCreation();
         Thread.sleep(2000);
         //app. getBoard().returnToHomePage();

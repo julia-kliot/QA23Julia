@@ -1,5 +1,6 @@
 package com.qa.trello.tests.framework;
 
+import com.qa.trello.model.Board;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -20,11 +21,22 @@ public class BoardHelper extends HelperBase {
         waitForElementLocatedAndClick(By.cssSelector("[type='button']"), 20);
     }
 
-    public void fillBoardForm() {
-        type(By.cssSelector("[data-test-id='create-board-title-input']"), "newBoard_3");
+    public void fillBoardForm(Board board) {
+        typeBoardName(board.getName());
+        selectTeamFromBoardCreationForm();
+        wd.findElement(By.cssSelector("[title='"+board.getColor()+"']")).click();
+
+    }
+
+    private void selectTeamFromBoardCreationForm() {
         waitForElementLocatedAndClick(By.cssSelector("button.W6rMLOx8U0MrPx"), 20);
         waitForElementLocatedAndClick(By.xpath("//li[1]/button[@class='_2jR0BZMM5cBReR']"), 20);
 
+    }
+
+    private void typeBoardName(String nameOfBoard) {
+
+        type(By.cssSelector("[data-test-id='create-board-title-input']"),  nameOfBoard);
     }
 
     public void initBoardCreation() {
@@ -73,7 +85,9 @@ public class BoardHelper extends HelperBase {
     public void createBoard() {
 
         initBoardCreation();
-        fillBoardForm();
+        fillBoardForm( new Board()
+                .withName("newBoard_3")
+                .withColor("[title='blue']"));
         confirmBoardCreation();
         returnToHomePage();
     }
