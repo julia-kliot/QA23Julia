@@ -14,6 +14,7 @@ public class ApplicationManager {
     TeamHelper team;
     SessionHelper session;
     String browser;
+    ProfileHelper profile;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -38,7 +39,7 @@ public class ApplicationManager {
         session = new SessionHelper(wd);
         session.login("juliakliot.jk@gmail.com", "misha2406");
         Thread.sleep(3000);
-
+        profile = new ProfileHelper(wd);
         board = new BoardHelper(wd);
         team = new TeamHelper(wd);
     }
@@ -59,5 +60,7 @@ public class ApplicationManager {
         return team;
     }
 
-
+    public ProfileHelper getProfile() {
+        return profile;
+    }
 }
