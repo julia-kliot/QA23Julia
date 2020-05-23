@@ -28,7 +28,7 @@ public class ApplicationManager {
 
             wd = new ChromeDriver();
         }
-        if (browser.equals(BrowserType.FIREFOX)) {
+       if (browser.equals(BrowserType.FIREFOX)) {
             wd = new FirefoxDriver();
         }
 
@@ -47,6 +47,8 @@ public class ApplicationManager {
     public void stop() {
         wd.quit();
     }
+
+
 
     public SessionHelper getSession() {
         return session;
