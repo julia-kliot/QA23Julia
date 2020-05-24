@@ -1,5 +1,6 @@
 package com.qa.trello.tests.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ProfileModificationTests extends TestBase {
@@ -11,7 +12,8 @@ public class ProfileModificationTests extends TestBase {
         app.getProfile().selectProfileAndVisibility();
         Thread.sleep(5000);
         app.getProfile().goToAtlassianProfile();
-        //iniChangeProfilePhoto();
-        //upLoadPhoto();
+        app.getProfile().iniChangeProfilePhoto();
+        app.getProfile().uploadPhoto();
+       // Assert.assertTrue(app.getProfile().avatarAdded());
     }
 }
