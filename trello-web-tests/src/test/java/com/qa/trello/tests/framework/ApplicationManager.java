@@ -38,7 +38,7 @@ public class ApplicationManager {
         wd.navigate().to("https://trello.com/");
         session = new SessionHelper(wd);
         session.login("juliakliot.jk@gmail.com", "misha2406");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         profile = new ProfileHelper(wd);
         board = new BoardHelper(wd);
         team = new TeamHelper(wd);

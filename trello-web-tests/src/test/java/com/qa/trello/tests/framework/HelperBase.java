@@ -1,9 +1,15 @@
 package com.qa.trello.tests.framework;
 
+import com.google.common.io.Files;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.File;
+import java.io.IOException;
 
 public class HelperBase {
 
@@ -54,5 +60,20 @@ public class HelperBase {
 
 
         }
+        public void takeScreenshot(long timeMillis){
+            File tmp = ((TakesScreenshot) wd).getScreenshotAs(OutputType.FILE);
+            File screenshot = new File("screen-"+timeMillis+ ".png");
+            try {
+                Files.copy(tmp,screenshot);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    public void refreshPage() {
+
+        wd.navigate().refresh();
     }
+}
 

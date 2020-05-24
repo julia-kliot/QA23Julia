@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.qa.trello.tests.tests.ProfileModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-24T06:32:47" hostname="dns" time="71.445">
+<testsuite name="com.qa.trello.tests.tests.ProfileModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-24T20:46:31" hostname="dns" time="152.586">
   <properties/>
-  <testcase name="testChangeProfileAvatar" classname="com.qa.trello.tests.tests.ProfileModificationTests" time="71.445"/>
-  <system-out><![CDATA[09:32:46.787 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Start testtestChangeProfileAvatar
-CDwindow-BF537412C2E679E9B74C06A2D5544440
-CDwindow-E049DBC99AFF21766023B83638C339CB
-09:33:58.828 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Stop testtestChangeProfileAvatarwith parameters[]
+  <testcase name="testChangeProfileAvatar" classname="com.qa.trello.tests.tests.ProfileModificationTests" time="152.586"/>
+  <system-out><![CDATA[23:46:31.291 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Start testtestChangeProfileAvatar
+CDwindow-F06ECE2CB1AF395867CE78DA9E8B2F59
+CDwindow-823CD11F22AC002BBA523AEE6D9D4E0F
+23:49:04.009 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - screenshot before: 1590353191427.png
+23:49:04.010 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - screenshot after: 1590353319893.png
+23:49:04.023 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Stop testtestChangeProfileAvatarwith parameters[]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

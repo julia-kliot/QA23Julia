@@ -16,20 +16,20 @@ public class ProfileHelper extends HelperBase {
     }
 
     public void clickOnAvatar() {
-        waitForElementLocatedAndClick(By.xpath("//*[@data-test-id='header-member-menu-button']"),20);
+        waitForElementLocatedAndClick(By.xpath("//*[@data-test-id='header-member-menu-button']"), 20);
     }
 
 
     public void selectProfileAndVisibility() {
-        waitForElementLocatedAndClick(By.xpath("//*[@data-test-id='header-member-menu-profile']"),20);
+        waitForElementLocatedAndClick(By.xpath("//*[@data-test-id='header-member-menu-profile']"), 20);
     }
 
     public void goToAtlassianProfile() {
         String trello = wd.getWindowHandle();
         System.out.println(trello);
-        waitForElementLocatedAndClick(By.cssSelector("a[href$=manage-profile]"),20);
-        List<String>availableWindows= new ArrayList<>(wd.getWindowHandles());
-        if(!availableWindows.isEmpty()){
+        waitForElementLocatedAndClick(By.cssSelector("a[href$=manage-profile]"), 20);
+        List<String> availableWindows = new ArrayList<>(wd.getWindowHandles());
+        if (!availableWindows.isEmpty()) {
             wd.switchTo().window(availableWindows.get(1));
         }
         //now Selenium on Atlassian page
@@ -37,12 +37,14 @@ public class ProfileHelper extends HelperBase {
         System.out.println(atlassianAcc);
     }
 
-    public void iniChangeProfilePhoto() {
+    public void iniChangeProfilePhoto() throws InterruptedException {
+        Thread.sleep(2000);
         WebElement avatar = wd.findElement(By.xpath("//*[@data-test-selector='profile-avatar']"));
         new Actions(wd).moveToElement(avatar).perform();
-        waitForElementLocatedAndClick(By.xpath("//*[@data-test-selector='trigger-avatar-picker']"),20);
+        waitForElementLocatedAndClick(By.xpath("//*[@data-test-selector='trigger-avatar-picker']"), 20);
     }
-    public void attachFile(By locator, File file){
+
+    public void attachFile(By locator, File file) {
         wd.findElement(locator).sendKeys(file.getAbsolutePath());
     }
 
@@ -50,10 +52,19 @@ public class ProfileHelper extends HelperBase {
         attachFile(By.cssSelector("button #image-input"),
                 new File("C:\\Users\\user\\Documents\\GitHub\\QA23Julia\\trello-web-tests\\src\\test\\resources\\bear.jpg"));
         Thread.sleep(2000);
-        waitForElementLocatedAndClick(By.xpath("//*[@class='css-1yx6h60']"),20);
+        waitForElementLocatedAndClick(By.xpath("//*[@class='css-1yx6h60']"), 20);
+        Thread.sleep(2000);
     }
 
-   //public boolean avatarAdded() {
-       // return isElementPresent()
+    public void returnToTrello() throws InterruptedException {
+        List<String> availableWindows = new ArrayList<>(wd.getWindowHandles());
+        wd.close();
+        wd.switchTo().window(availableWindows.get(0));
+
+        Thread.sleep(5000);
     }
+
+    //public boolean avatarAdded() {
+    // return isElementPresent()
+}
 
