@@ -20,7 +20,7 @@ public class BoardNameChangeTest extends TestBase {
 
 
 
-    @Test
+    @Test(enabled=false)
         public void changeBoardName() throws InterruptedException {
             app.getBoard().openFirstPersonalBoard();
             Thread.sleep(2000);

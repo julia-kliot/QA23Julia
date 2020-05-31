@@ -45,11 +45,8 @@ public class ProfileHelper extends HelperBase {
     }
 
 
-    public void deleteProfilePhoto() throws InterruptedException {
-        Thread.sleep(2000);
 
-        waitForElementLocatedAndClick(By.cssSelector("[xpath='1']"), 20);
-    }
+
 
 
     public void attachFile(By locator, File file) {

@@ -17,7 +17,7 @@ public class ProfileModificationTests extends TestBase {
         app.getProfile().goToAtlassianProfile();
         Thread.sleep(2000);
         app.getProfile().iniChangeProfilePhoto();
-        app.getProfile().deleteProfilePhoto();
+
         app.getProfile().uploadPhoto();
         long afterScreenshot= System.currentTimeMillis();
         app.getProfile().takeScreenshot(afterScreenshot);
