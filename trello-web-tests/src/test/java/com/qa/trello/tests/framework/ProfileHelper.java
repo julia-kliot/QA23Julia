@@ -38,11 +38,19 @@ public class ProfileHelper extends HelperBase {
     }
 
     public void iniChangeProfilePhoto() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         WebElement avatar = wd.findElement(By.xpath("//*[@data-test-selector='profile-avatar']"));
         new Actions(wd).moveToElement(avatar).perform();
         waitForElementLocatedAndClick(By.xpath("//*[@data-test-selector='trigger-avatar-picker']"), 20);
     }
+
+
+    public void deleteProfilePhoto() throws InterruptedException {
+        Thread.sleep(2000);
+
+        waitForElementLocatedAndClick(By.cssSelector("[xpath='1']"), 20);
+    }
+
 
     public void attachFile(By locator, File file) {
         wd.findElement(locator).sendKeys(file.getAbsolutePath());

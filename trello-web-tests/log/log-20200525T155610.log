@@ -1,0 +1,2 @@
+15:57:30.264 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Start testtestChangeProfileAvatar
+15:59:11.046 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Stop testtestChangeProfileAvatarwith parameters[]
