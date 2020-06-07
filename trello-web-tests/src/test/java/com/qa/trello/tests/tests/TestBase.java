@@ -9,6 +9,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
@@ -20,7 +21,7 @@ public class TestBase {
     Logger logger = LoggerFactory.getLogger(TestBase.class);
 
     @BeforeSuite
-    public void setUp() throws InterruptedException {
+    public void setUp() throws InterruptedException, IOException {
         app.init();
 
     }
@@ -40,7 +41,7 @@ public class TestBase {
     }
 
 
-    @AfterSuite(enabled=false)
+    @AfterSuite
     public void tearDown() {
 
         app.stop();
