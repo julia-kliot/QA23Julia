@@ -93,4 +93,9 @@ public class BoardCreationTests extends TestBase {
             //int after = app.getBoard().getBoardsCount();
 
 }
+@Test
+    public void getBoardsName(){
+        app.getBoard().getBoardsList();
+
+}
     }

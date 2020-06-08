@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 public class BoardHelper extends HelperBase {
 
 
@@ -111,5 +113,15 @@ public class BoardHelper extends HelperBase {
 
     public void goToBoardsPageURL(String username){
         wd. navigate().to("https://trello.com/"+username+"/boards");
+    }
+
+    public void getBoardsList(){
+        List<WebElement> boards = wd.findElements(By.xpath("//*[@class='icon-lg icon-member']/../../..// li"));
+        for(WebElement board: boards){
+            String name = board.getText();
+            System.out.println(name);
+        }
+
+
     }
 }

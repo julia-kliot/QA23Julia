@@ -1,0 +1,2 @@
+17:54:41.188 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Start testgetBoardsName
+17:55:50.682 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Stop testgetBoardsNamewith parameters[]

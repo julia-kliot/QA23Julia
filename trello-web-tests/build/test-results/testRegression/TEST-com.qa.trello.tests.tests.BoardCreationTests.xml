@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.qa.trello.tests.tests.BoardCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-08T14:55:17" hostname="dns" time="33.178">
+  <properties/>
+  <testcase name="getBoardsName" classname="com.qa.trello.tests.tests.BoardCreationTests" time="33.178"/>
+  <system-out><![CDATA[17:54:41.188 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Start testgetBoardsName
+1111111
+1111111
+aaaaaaa
+aaaaaaa
+aaaaaaa
+aaaaaaa
+aaaaaaa
+aaaaaaa
+dfghd_tyuui-bnvmcl
+dfghd_tyuui-bnvmcl
+dfghd_tyuui-bnvmcl
+My new board
+My new board
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+newBoard_3
+Test 1589794494766
+Test 1589794820780
+Test 1590853494817
+Test 1590955947718
+uiolk;,
+Создать доску
+17:55:50.682 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Stop testgetBoardsNamewith parameters[]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
